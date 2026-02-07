@@ -11,9 +11,10 @@ public class DbInitilizer
         using var scope = app.Services.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<StoreContext>()
         ?? throw new InvalidOperationException("Could not get StoreContext from services");
-        
+
         SeedData(context);
     }
+
 
     private static void SeedData(StoreContext context)
     {
